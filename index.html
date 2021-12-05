@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+
+    <!--Link al Bootstrap con tutte le sue librerie-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="resources/slideshow/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+    <div class="container">
+        <header class="text-center mt-2">
+            <h1 class="display-4">Slideshow</h1>
+        </header>
+
+        <nav class="row text-center my-3">
+            <div class="col py-1 text-dark bg-primary bg-opacity-75 slideshow-menu">View</div>
+            <div class="col-2 py-1 bg-secondary bg-opacity-50 slideshow-menu">Edit Slideshow</div>
+        </nav>
+
+        <main id="top">
+            <div class="row p-2 border border-secondary rounded-2" id="slideshow-container">
+                <div class="col text-end border border-primary slideshow-control" id="slideshow-left">
+                    <div class="row h-50"></div>
+                    <div class="row h-50">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-10 text-center border border-primary" id="slideshow-image">
+                    <img src="" alt="" class="w-100" id="slideshow-image-container">
+                    <p id="slideshow-image-caption"></p>
+                </div>
+                <div class="col text-start border border-primary slideshow-control" id="slideshow-right">
+                    <div class="row h-50"></div>
+                    <div class="row h-50">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row p-2 border border-secondary rounded-2 visually-hidden" id="slideedit-container">
+                <div class="text-center py-1 align-middle border border-secondary rounded-2">
+                    <div class="text-warning border border-warning rounded-3">
+                        Dopo aver terminato tutti i tipi di azione per salvare a qua sotto è presente un pulsanta Applica che farà sacricare il nuovo file JSON da SOVRASCRIVERE A QUELLO VECCHIO! <br>
+                        <button class="btn btn-light btn-outline-primary my-2" id="slideedit-applychanges">Applica Modifiche</button>
+                    </div>
+                    <div class="mt-1 pe-2 border border-success rounded-3" id="slideedit-newfile">
+                        <div><h6>Aggiungi nuove immagini</h6><p class="text-danger">I file devono essere immagini (.jpg, .jpeg, .png) e devono essere nella cartella resources/images</p></div>
+                        <input type="file" id="slideedit-selectfile" class="btn" accept=".jpg, .jpeg, .png" multiple>
+                        <button class="btn btn-light btn-outline-success" id="slideedit-uploadfile">Carica Immagini Selezionate</button>
+                    </div>
+                </div>
+                <div class="col-6 gx-5" id="slideedit-imgpreview"></div>
+                <div class="col-6 border-start border-secondary">
+                    <span>Code Preview</span>
+                    <p class="my-2"><code id="slideedit-codepreview"></code></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"
+    ></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="resources/slideshow/script.js"></script>
+</body>
+</html>
